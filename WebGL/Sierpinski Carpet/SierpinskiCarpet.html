@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <title>Sierpinski Carpet</title>
+    <head>
+        <script id = "vertex-shader" type="x-shader/x-vertex">
+            attribute vec4 vPosition;
+
+            void
+            main()
+            {
+                gl_Position = vPosition;
+            }
+        </script>
+        <script id = "fragment-shader" type="x-shader/x-fragment">
+            precision mediump float;
+            uniform vec4 uColor;
+            void
+            main()
+            {
+                gl_FragColor =uColor;
+            }
+        </script>
+        <script type="text/javascript" src="../Common/webgl-utils.js"></script>
+        <script type="text/javascript" src="../Common/initShaders.js"></script>
+        <script type="text/javascript" src="../Common/MV.js"></script>
+        <script type="text/javascript" src="SierpinskiCarpet.js"></script>
+
+    </head>
+
+    <body>
+        <div>
+             <input type = "button" id = "colorButton" value = "Change Color"> 
+        </div>
+        <div>
+            "Recursion Steps: 0"
+            <input type = "range" id = "slider" min = "0" max = "6" value = "0" step = "1">
+            "6"
+        </div>
+        <canvas id="gl-canvas" width="512" height="512">
+            Oops ... your browser doesn't support the HTML5 canvas element
+        </canvas>
+
+    </body>
+</html>
